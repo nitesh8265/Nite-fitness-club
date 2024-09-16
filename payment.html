@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.payment-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.method {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    /* margin-top: 20px; */
+}
+
+.method:hover {
+    transform: scale(1.05);
+}
+
+.method img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Payment Options</h1>
+        <div class="payment-methods">
+            <div class="method">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/695px-UPI-Logo-vector.svg.png?20200901100648" alt="UPI Logo">
+                <button onclick="payWithUPI()">Pay with UPI</button>
+            </div>
+            <div class="method">
+                <img src="https://static.vecteezy.com/system/resources/previews/034/370/779/large_2x/flat-design-bank-account-icon-vector.jpg" alt="Bank Account Logo">
+                <button onclick="payWithAccount()">Pay with Account Number</button>
+            </div>
+            <div class="method">
+                <img src="https://cdn.freelogovectors.net/wp-content/uploads/2023/11/phonepe_logo-freelogovectors.net_.png" alt="PhonePe Logo">
+                <button onclick="payWithPhonePe()">Pay with PhonePe</button>
+            </div>
+            <div class="method">
+                <img src="https://1000logos.net/wp-content/uploads/2021/03/Paytm_Logo.png" alt="Paytm Logo">
+                <button onclick="payWithPaytm()">Pay with Paytm</button>
+            </div>
+            <div class="method">
+                <img src="https://static.vecteezy.com/system/resources/previews/017/221/853/non_2x/google-pay-logo-transparent-free-png.png" alt="Google Pay Logo">
+                <button onclick="payWithGooglePay()">Pay with Google Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Bank Account Details</h2>
+            <p>Please transfer to the following account number:</p>
+            <p><strong>Account Number:</strong>623902010009673 </p>
+            <p><strong>Bank:</strong> UNION BANK 0F INDIA</p>
+            <p><strong>IFSC:</strong> UBINO562394</p>
+        </div>
+    </div>
+
+    <script >function payWithUPI() {
+        let upiId = prompt("Enter UPI ID:");
+        if (upiId) {
+            window.location.href = `upi://pay?pa=${upiId}&pn=YOUR_NAME&mc=&tid=&tr=&tn=Payment&am=0&cu=INR`;
+        }
+    }
+    
+    function payWithAccount() {
+        document.getElementById('accountModal').style.display = "block";
+    }
+    
+    function closeModal() {
+        document.getElementById('accountModal').style.display = "none";
+    }
+    
+    function payWithPhonePe() {
+        window.location.href = 'https://www.phonepe.com';
+    }
+    
+    function payWithPaytm() {
+        window.location.href = 'https://paytm.com';
+    }
+    
+    function payWithGooglePay() {
+        window.location.href = 'https://pay.google.com';
+    }
+    
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        let modal = document.getElementById('accountModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

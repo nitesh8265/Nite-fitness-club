@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise - Nite Fit</title>
+    <!-- Google Fonts for stylish fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Resetting some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .nav-links li {
+            display: inline;
+        }
+
+        /* Styles for navigation links */
+        .navbar .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .navbar .nav-links a i {
+            font-size: 20px;
+        }
+
+        /* Unique styles for each navigation link */
+        .navbar .nav-links a#exercises {
+            font-size: 22px;
+            color: #f44336;
+            text-decoration: underline;
+        }
+
+        .navbar .nav-links a#plans {
+            font-size: 20px;
+            color: #9c27b0;
+            text-decoration: line-through;
+        }
+
+        .navbar .nav-links a#nutrition {
+            font-size: 18px;
+            color: #4caf50;
+            text-decoration: overline;
+        }
+
+        .navbar .nav-links a#progress {
+            font-size: 24px;
+            color: #03a9f4;
+            text-decoration: line-through;
+        }
+
+        .navbar .nav-links a#community {
+            font-size: 19px;
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+
+        .navbar .nav-links a#tips {
+            font-size: 21px;
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        /* Hover effects for navigation links */
+        .navbar .nav-links a:hover {
+            background-color: #555;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Exercise section */
+        .exercise-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .exercise {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .exercise:hover {
+            transform: translateY(-10px);
+        }
+
+        .exercise img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .exercise p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .exercise {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .exercise {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #333;
+                width: 100%;
+                text-align: center;
+                display: none;
+            }
+
+            .navbar .nav-links li {
+                display: block;
+            }
+
+            .navbar .nav-links a {
+                padding: 15px;
+                border-bottom: 1px solid #555;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+        /* Toggle the menu when the burger is clicked */
+        .navbar.active .nav-links {
+            display: flex;
+        }
+
+        /* Burger icon animation for active state */
+        .navbar.active .burger .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .navbar.active .burger .line2 {
+            opacity: 0;
+        }
+
+        .navbar.active .burger .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Exercise</div>
+        <ul class="nav-links">
+            <li><a id="exercises" href="#exercises"><i class="material-icons">fitness_center</i>Cardio</a></li>
+            <li><a id="plans" href="#plans"><i class="material-icons">playlist_add_check</i>Strength Training</a></li>
+            <li><a id="nutrition" href="#nutrition"><i class="material-icons">restaurant_menu</i>Yoga</a></li>
+            <li><a id="progress" href="#progress"><i class="material-icons">trending_up</i>Pilates</a></li>
+            <li><a id="community" href="#community"><i class="material-icons">group</i>HIIT</a></li>
+            <li><a id="tips" href="#tips"><i class="material-icons">lightbulb</i>Stretching</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <div class="exercise-section">
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q2FyZGlvJTIwV29ya291dCUyMGdpcmxzfGVufDB8fDB8fHww" alt="Cardio Exercise">
+            <h2>Cardio Workout</h2>
+            <p>Cardio exercises are great for improving cardiovascular health and burning calories. They include activities like running, cycling, and swimming.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1434682772747-f16d3ea162c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fFN0cmVuZ3RoJTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D" alt="Strength Training Exercise">
+            <h2>Strength Training</h2>
+            <p>Strength training exercises focus on building muscle strength and endurance. Examples include weightlifting, bodyweight exercises, and resistance band workouts.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1577344718665-3e7c0c1ecf6b?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Yoga Exercise">
+            <h2>Yoga</h2>
+            <p>Yoga combines physical postures, breathing exercises, and meditation to improve flexibility, balance, and mental clarity.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1657664042482-a6e53c1b03a1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGlsYXRlc3xlbnwwfHwwfHx8MA%3D%3D.com/600x300" alt="Pilates Exercise">
+            <h2>Pilates</h2>
+            <p>Pilates focuses on core strength, flexibility, and posture. It involves controlled movements and specific breathing techniques.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://plus.unsplash.com/premium_photo-1664474563253-02b680ca192d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SElJVCUyMChIaWdoJTIwSW50ZW5zaXR5JTIwSW50ZXJ2YWwlMjBUcmFpbmluZyl8ZW58MHx8MHx8fDA%3D" alt="HIIT Exercise">
+            <h2>HIIT (High-Intensity Interval Training)</h2>
+            <p>HIIT workouts alternate between short bursts of intense exercise and periods of rest or lower-intensity exercise. They are effective for burning calories and improving fitness levels.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1603988533324-9e39be986394?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3RyZXRjaGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Stretching Exercise">
+            <h2>Stretching</h2>
+            <p>Stretching exercises improve flexibility, reduce muscle tension, and enhance range of motion. They are beneficial before and after workouts.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the navbar
+        const navbar = document.querySelector('.navbar');
+        const burger = document.querySelector('.burger');
+
+        burger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

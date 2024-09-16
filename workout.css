@@ -1,0 +1,213 @@
+/* Resetting some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+}
+
+/* Navigation bar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+/* Styles for navigation links */
+.navbar .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.navbar .nav-links a i {
+    font-size: 20px;
+}
+
+/* Unique styles for each navigation link */
+.navbar .nav-links a#exercises {
+    font-size: 22px;
+    color: #f44336;
+    text-decoration: underline;
+}
+
+.navbar .nav-links a#plans {
+    font-size: 20px;
+    color: #9c27b0;
+    text-decoration: line-through;
+}
+
+.navbar .nav-links a#nutrition {
+    font-size: 18px;
+    color: #4caf50;
+    text-decoration: overline;
+}
+
+.navbar .nav-links a#progress {
+    font-size: 24px;
+    color: #03a9f4;
+    text-decoration: line-through;
+}
+
+.navbar .nav-links a#community {
+    font-size: 19px;
+    color: #ffeb3b;
+    text-decoration: underline;
+}
+
+.navbar .nav-links a#tips {
+    font-size: 21px;
+    color: #ff9800;
+    text-decoration: none;
+}
+
+/* Hover effects for navigation links */
+.navbar .nav-links a:hover {
+    background-color: #555;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Burger menu for mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .navbar .nav-links li {
+        display: block;
+    }
+
+    .navbar .nav-links a {
+        padding: 15px;
+        border-bottom: 1px solid #555;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* Toggle the menu when the burger is clicked */
+.navbar.active .nav-links {
+    display: flex;
+}
+
+/* Burger icon animation for active state */
+.navbar.active .burger .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar.active .burger .line2 {
+    opacity: 0;
+}
+
+.navbar.active .burger .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Exercise section */
+.exercise-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.exercise {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.exercise img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.exercise h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.exercise p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Hover effect for exercise cards */
+.exercise:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}

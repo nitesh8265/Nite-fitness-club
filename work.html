@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout - Nite Fit</title>
+    <!-- Google Fonts for stylish fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="workout.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Workout</div>
+        <ul class="nav-links">
+            <li><a id="exercises" href="#exercises"><i class="material-icons">fitness_center</i>Exercises</a></li>
+            <li><a id="plans" href="#plans"><i class="material-icons">playlist_add_check</i>Plans</a></li>
+            <li><a id="nutrition" href="#nutrition"><i class="material-icons">restaurant_menu</i>Nutrition</a></li>
+            <li><a id="progress" href="#progress"><i class="material-icons">trending_up</i>Progress</a></li>
+            <li><a id="community" href="#community"><i class="material-icons">group</i>Community</a></li>
+            <li><a id="tips" href="#tips"><i class="material-icons">lightbulb</i>Tips</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Welcome to Nite Fit Workouts</h1>
+        <p>Your ultimate destination for personalized workout plans, nutritional advice, and community support.</p>
+    </div>
+
+
+    <div class="exercise-section">
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q2FyZGlvJTIwV29ya291dCUyMGdpcmxzfGVufDB8fDB8fHww" alt="Cardio Exercise">
+            <h2>Cardio Workout</h2>
+            <p>Cardio exercises are great for improving cardiovascular health and burning calories. They include activities like running, cycling, and swimming.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1434682772747-f16d3ea162c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fFN0cmVuZ3RoJTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D" alt="Strength Training Exercise">
+            <h2>Strength Training</h2>
+            <p>Strength training exercises focus on building muscle strength and endurance. Examples include weightlifting, bodyweight exercises, and resistance band workouts.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1577344718665-3e7c0c1ecf6b?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Yoga Exercise">
+            <h2>Yoga</h2>
+            <p>Yoga combines physical postures, breathing exercises, and meditation to improve flexibility, balance, and mental clarity.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1657664042482-a6e53c1b03a1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGlsYXRlc3xlbnwwfHwwfHx8MA%3D%3D.com/600x300" alt="Pilates Exercise">
+            <h2>Pilates</h2>
+            <p>Pilates focuses on core strength, flexibility, and posture. It involves controlled movements and specific breathing techniques.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://plus.unsplash.com/premium_photo-1664474563253-02b680ca192d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SElJVCUyMChIaWdoJTIwSW50ZW5zaXR5JTIwSW50ZXJ2YWwlMjBUcmFpbmluZyl8ZW58MHx8MHx8fDA%3D" alt="HIIT Exercise">
+            <h2>HIIT (High-Intensity Interval Training)</h2>
+            <p>HIIT workouts alternate between short bursts of intense exercise and periods of rest or lower-intensity exercise. They are effective for burning calories and improving fitness levels.</p>
+        </div>
+
+        <div class="exercise">
+            <img src="https://images.unsplash.com/photo-1603988533324-9e39be986394?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3RyZXRjaGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Stretching Exercise">
+            <h2>Stretching</h2>
+            <p>Stretching exercises improve flexibility, reduce muscle tension, and enhance range of motion. They are beneficial before and after workouts.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+    <script>
+        // JavaScript to toggle the navbar
+        const navbar = document.querySelector('.navbar');
+        const burger = document.querySelector('.burger');
+
+        burger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+
+
+
+    <style>/* Reset and basic styles */
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Example background color */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust the height as needed */
+    width: auto;
+    border-radius: 50%; /* Round the logo image */
+    transition: transform 0.3s ease; /* Add a transition effect */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Add a transition effect for color change */
+}
+
+.nav-links a:hover {
+    color: #f0f0f0; /* Change color on hover */
+}
+
+.nav-links a i {
+    margin-right: 8px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Designer.png" alt="Nite Fit Club Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#about"><i class="fa-sharp fa-solid fa-address-card"></i> About</a></li>
+            <li><a href="#classes"><i class="fa-solid fa-dumbbell"></i> Classes</a></li>
+            <li><a href="#schedule"><i class="fa-solid fa-calendar-days"></i> Schedule</a></li>
+            <li><a href="#trainers"><i class="fa-solid fa-person"></i> Trainers</a></li>
+            <li><a href="#membership"><i class="fa-solid fa-puzzle-piece"></i> Membership</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-address-book"></i> Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</body>
+</html>

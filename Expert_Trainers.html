@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Trainers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Container Styles */
+        .expert-trainers {
+            padding: 60px 20px;
+            text-align: center;
+
+            background-image:url(https://images.unsplash.com/photo-1572459815549-873917ec8c0a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGJvZHklMjBidWlsZGVyfGVufDB8fDB8fHww) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        }
+      
+
+
+
+        .expert-trainers .container {
+            max-width: 1200px;
+            margin: 0 auto;
+          
+
+            padding: 20px;
+        }
+
+        /* Heading and Paragraph Styles */
+        .expert-trainers h1 {
+            font-size: 3em;
+            color:white;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .expert-trainers p {
+            font-size: 1.2em;
+            color: white;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Trainers Section Styles */
+        .expert-trainers .trainers {
+
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: rgba(0, 0, 0, 0.);
+        }
+
+        /* Individual Trainer Styles */
+        .expert-trainers .trainer {
+            flex: 1 1 300px;
+            margin: 20px;
+            padding: 20px;
+            border:solid 2px white;
+             
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .expert-trainers .trainer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          
+        }
+
+        .expert-trainers .trainer h2 {
+            font-size: 1.8em;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .expert-trainers .trainer p {
+            font-size: 1em;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* Expertise Tags */
+        .expert-trainers .trainer .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .expert-trainers .trainer .tags span {
+            background-color: #ffdd57;
+            color: #2c3e50;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        /* Social Media Links */
+        .expert-trainers .trainer .social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .expert-trainers .trainer .social a {
+            color: #ffdd57;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .expert-trainers .trainer .social a:hover {
+            color: #febf10;
+        }
+
+        /* Trainer Hover Effects */
+        .expert-trainers .trainer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .expert-trainers .trainers {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .expert-trainers h1 {
+                font-size: 2.5em;
+            }
+
+            .expert-trainers p {
+                font-size: 1em;
+            }
+
+            .expert-trainers .trainer {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .expert-trainers .trainer h2 {
+                font-size: 1.5em;
+            }
+
+            .expert-trainers .trainer p {
+                font-size: 0.9em;
+            }
+
+  
+
+      
+    </style>
+</head>
+<body>
+    <section class="expert-trainers">
+        <div class="container">
+            <h1>Expert Trainers</h1>
+            <p>Our certified trainers are here to guide and motivate you every step of the way. Discover our team of professionals dedicated to helping you reach your fitness goals.</p>
+            <div class="trainers">
+                <div class="trainer">
+                    <img src="https://plus.unsplash.com/premium_photo-1672862925604-9079f0a492e8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXhwZXJ0JTIwdHJhaW5lciUyMFN0cmVuZ3RoJTIwVHJhaW5pbmclMjBGdW5jdGlvbmFsJTIwV29ya291dHMlMjBCb2R5YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D" alt="Trainer 1">
+                    <h2>John Doe</h2>
+                    <p>Specializes in strength training and functional workouts.</p>
+                    <div class="tags">
+                        <span>Strength Training</span>
+                        <span>Functional Workouts</span>
+                        <span>Bodybuilding</span>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer">
+                    <img src="https://plus.unsplash.com/premium_photo-1664109999862-6ec6941f1b70?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXhwZXJ0JTIwdHJhaW5lciUyMHdvbWVufGVufDB8fDB8fHww" alt="Trainer 2">
+                    <h2>Jane Smith</h2>
+                    <p>Expert in HIIT and cardiovascular fitness routines.</p>
+                    <div class="tags">
+                        <span>HIIT</span>
+                        <span>Cardio</span>
+                        <span>Nutrition</span>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="trainer">
+                    <img src="https://plus.unsplash.com/premium_photo-1661681779894-e38c77e9b8bc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGV4cGVydCUyMHRyYWluZXJ8ZW58MHx8MHx8fDA%3D" alt="Trainer 3">
+                    <h2>Mike Johnson</h2>
+                    <p>Focused on holistic wellness and personal coaching.</p>
+                    <div class="tags">
+                        <span>Wellness</span>
+                        <span>Personal Coaching</span>
+                        <span>Mental Health</span>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Awesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
